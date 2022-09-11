@@ -54,7 +54,7 @@ fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${currLocation
 
     document.querySelector('.visibility').innerHTML = 'Visibility: ' + (data.current.vis_km) + 'km';
 
-    document.querySelector('.update-time').innerHTML = 'Last Updated: ' + (data.current.last_updated);
+    document.querySelector('.update-time').innerHTML = 'Last Update: ' + (data.current.last_updated);
 
     //HOURLY
     for (let i = 0; i < 24; i++) {
