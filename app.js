@@ -84,3 +84,11 @@ fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${currLocation
     document.querySelector('.moon-phase').innerHTML = 'Moon Phase: ' + (data.forecast.forecastday[0].astro.moon_phase);
   });
 
+  function mainScreenCheck() {
+    const headerText = document.querySelector('.header-name')
+    const headerImg = document.querySelector('.header-img')
+    if (window.screen.width <= 700) {
+      headerText.style.display = 'none'
+      headerImg.style.display = 'initial'
+    }
+}
