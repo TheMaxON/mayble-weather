@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mayble Weather</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slider/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slider/slick-theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="media/logo.png">
+
+    <!-- ДОБАВИТЬ ССЫЛКИ НА РЕСУРСЫ:
+        - https://thenounproject.com/
+        - https://www.weatherapi.com/docs/
+        -sunrise icon https://www.flaticon.com/authors/mehwish 
+        -sunset icon https://www.flaticon.com/authors/mehwish 
+        - moonrise icon https://www.flaticon.com/authors/pixel-perfect-->
+</head>
+
+<body onload="getLocation()">
+    <section class="header">
+        <a href="index.html" class="header-name" title="Home"><span class="header-mayble">Mayble</span> <span
+                class="header-notes">Weather</span></a>
+        <input class="search" type="text" placeholder="Enter city..." spellcheck="false">
+    </section>
+    <section class="main">
+        <div class="content">
+            <div class="quick-search" data-aos='fade-down'>
+                <span class="quick-dnipro quick-point" onclick="getLocation()">Dnipro</span>
+            </div>
+            <div class="content-1">
+                <div class="current-temp" data-aos='fade-up'>
+                    <h1 class="city-name">-</h1>
+                    <span class="temp">-</span>
+                    <span class="realfeel">Real Feel: -°C</span>
+                    <div class="high_low-temp"><span class="current-high">Max: -°C</span> <span class="current-low">Min:
+                            -°C</span></div>
+                    <span class="rain-chance">Chance of Rain: -%</span>
+                    <span class="update-time">Last Updated: -</span>
+                </div>
+
+                <div class="details" data-aos='fade-up'>
+                    <h1>Details</h1>
+                    <span class="current-info">Condition: -</span>
+                    <span class="current-humidity">Humidity: -%</span>
+                    <span class="current-precipitation">Precipitation: -mm</span>
+                    <span class="snow-chance">Chance of Snow: -%</span>
+                    <span class="current-wind">Wind: -kph</span>
+                    <span class="visibility">Visibility: -km</span>
+                </div>
+            </div>
+
+            <div class="hourly" data-aos='fade-right'>
+                <h1>Hourly</h1>
+                <div class="slider">
+                    <div class="slide">
+                        <span class="hourly-time">00:00</span>
+                        <span class="hourly-temp hourly-temp-0">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-0">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">01:00</span>
+                        <span class="hourly-temp hourly-temp-1">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-1">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">02:00</span>
+                        <span class="hourly-temp hourly-temp-2">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-2">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">03:00</span>
+                        <span class="hourly-temp hourly-temp-3">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-3">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">04:00</span>
+                        <span class="hourly-temp hourly-temp-4">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-4">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">05:00</span>
+                        <span class="hourly-temp hourly-temp-5">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-5">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">06:00</span>
+                        <span class="hourly-temp hourly-temp-6">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-6">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">07:00</span>
+                        <span class="hourly-temp hourly-temp-7">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-7">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">08:00</span>
+                        <span class="hourly-temp hourly-temp-8">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-8">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">09:00</span>
+                        <span class="hourly-temp hourly-temp-9">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-9">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">10:00</span>
+                        <span class="hourly-temp hourly-temp-10">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-10">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">11:00</span>
+                        <span class="hourly-temp hourly-temp-11">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-11">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">12:00</span>
+                        <span class="hourly-temp hourly-temp-12">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-12">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">13:00</span>
+                        <span class="hourly-temp hourly-temp-13">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-13">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">14:00</span>
+                        <span class="hourly-temp hourly-temp-14">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-14">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">15:00</span>
+                        <span class="hourly-temp hourly-temp-15">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-15">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">16:00</span>
+                        <span class="hourly-temp hourly-temp-16">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-16">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">17:00</span>
+                        <span class="hourly-temp hourly-temp-17">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-17">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">18:00</span>
+                        <span class="hourly-temp hourly-temp-18">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-18">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">19:00</span>
+                        <span class="hourly-temp hourly-temp-19">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-19">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">20:00</span>
+                        <span class="hourly-temp hourly-temp-20">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-20">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">21:00</span>
+                        <span class="hourly-temp hourly-temp-21">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-21">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">22:00</span>
+                        <span class="hourly-temp hourly-temp-22">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-22">Rain Chance: 80%</span>
+                    </div>
+                    <div class="slide">
+                        <span class="hourly-time">23:00</span>
+                        <span class="hourly-temp hourly-temp-23">12°C</span>
+                        <span class="hourly-rain-chance hourly-rain-chance-23">Rain Chance: 80%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-2">
+                <div class="days-forecast" data-aos='fade-up'>
+                    <h1>Future Forecast</h1>
+                    <h2>Tomorrow</h2>
+                    <div class="tomorrow-forecast">
+                        <span class="tomorrow-temp">--°C</span>
+                        <div class="future-rain-chance">
+                            <span><img src="media/296.png" alt=""></span>
+                            <span class="future-rain-prob">00%</span>
+                        </div>
+                        <div class="future-snow-chance">
+                            <span><img src="media/338.png" alt=""></span>
+                            <span class="future-snow-prob">00%</span>
+                        </div>
+                        <div class="tomorrow-max-low">
+                            <span class="tomorrow-max">Max: -°C |</span> <span class="tomorrow-low">Min: -°C</span>
+                        </div>
+                    </div>
+                    <h2>Following Day</h2>
+                    <div class="tomorrow-forecast">
+                        <span class="following-temp">--°C</span>
+                        <div class="future-rain-chance">
+                            <span><img src="media/296.png" alt=""></span>
+                            <span class="following-rain-prob">00%</span>
+                        </div>
+                        <div class="future-snow-chance">
+                            <span><img src="media/338.png" alt=""></span>
+                            <span class="following-snow-prob">00%</span>
+                        </div>
+                        <div class="tomorrow-max-low">
+                            <span class="following-max">Max: -°C</span> <span class="following-low">Min: -°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="astro" data-aos='fade-up'>
+                    <h1>Astronomy Details</h1>
+                    <span class="sunrise-sunset">
+                        <img src="media/sunrise.png" alt="">
+                        <p class="sunrise-time">06:35AM</p>
+                        <img src="media/sunset.png" alt="">
+                        <p class="sunset-time">17:58AM</p>
+                    </span>
+                    <span class="sunrise-sunset">
+                        <img src="media/moonrise.png" alt="">
+                        <p class="moonrise-time">06:35AM</p>
+                        <img src="media/moonset.png" alt="">
+                        <p class="moonset-time">17:58AM</p>
+                    </span>
+                    <span class="moon-phase">
+                        Moon Phase:
+                    </span>
+                    <p class="weather-credits">Powered by <a href="https://www.weatherapi.com/"
+                            title="Free Weather API">WeatherAPI.com</a> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div>Website by <span class="name">Maxim Musatov</span></div>
+        <span class="credits-head" onclick="location.href='https://www.rockstargames.com/';">CREDITS ></span>
+        <div>© 2022 Maxim Musatov. All rights reserved.</div>
+    </section>
+
+    <script type="text/javascript" src='app.js'></script>
+    <script src="slider/jquery-3.5.1.min.js"></script>
+    <script src="slider/slick.min.js"></script>
+
+    <script>
+        var slides = 7
+        var scroll = 6
+        var size = window.screen.width
+            if (size < '1000') {
+                var slides = 6
+        }
+            if (size < '1000') {
+                    var scroll = 5
+            }
+
+            if (size < '900') {
+                var slides = 5
+        }
+            if (size < '900') {
+                    var scroll = 4
+            }
+
+        $('.slider').slick({
+            dots: false,
+            adaptiveHeight: true,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            arrows: true,
+            draggable: true,
+            infinite: false,
+            slidesToScroll: `${scroll}`,
+            slidesToShow: `${slides}`,
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 10,
+            duration: 400,
+        });
+    </script>
+
+</body>
+
+</html>
