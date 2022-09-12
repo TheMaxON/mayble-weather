@@ -15,6 +15,7 @@
 :root {
     --heading-text-color: #292218;
     --secondary-text-color: #f2a943;
+    --secondary-color: rgb(230, 230, 230);
 }
 
 body {
@@ -86,7 +87,7 @@ img {
     border: 1px solid rgba(255,255,255,0.35);
     color: var(--heading-text-color);
     transition: all 0.15s ease-in-out;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-size: 1.2em;
 }
 
@@ -107,7 +108,7 @@ img {
 }
 
 .content h1 {
-    width: 98%;
+    width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -115,7 +116,8 @@ img {
     color: var(--heading-text-color);
     font-size: clamp(2rem, 2.6vw, 90px);
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 2;
+    text-align: center;
 }
 
 .quick-search {
@@ -131,10 +133,10 @@ img {
     flex-direction: row;
     align-items: center;
 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mulish', sans-serif;
     color: white;
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .quick-point {
@@ -170,10 +172,11 @@ img {
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 30px;
     padding: 1em 2.5em;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .current-temp {
@@ -215,7 +218,7 @@ img {
 }
 
 .hourly {
-    height: 15em;
+    height: 19em;
     grid-area: 2 / 1 / 3 / 3;
 }
 
@@ -223,8 +226,7 @@ img {
     width: 100%;
     height: 9.5em;
     margin-top: 0.5%;
-    background-color: #222129;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    background: rgb(230, 230, 230);
     display: flex;
     border-radius: 15px;
 }
@@ -234,24 +236,32 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #191820;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    background: rgba(255,255,255,0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.35);
 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-size: 1.3em;
     color: white;
 }
 
+.hourly-time {
+    font-family: 'Mulish';
+    font-weight: 700;
+    color: var(--heading-text-color);
+}
+
 .hourly-temp {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-size: 2.5em;
     line-height: 1.1;
-    color: #ecab83;
+    color: var(--secondary-text-color);
 }
 
 .hourly-rain-chance {
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.7em;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
     color: grey;
 }
 
@@ -260,10 +270,10 @@ img {
 }
 
 .days-forecast h2 {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-size: 2em;
     line-height: 1.1;
-    color: #ecab83;
+    color: var(--secondary-text-color);
     margin-top: 2%;
 }
 
@@ -272,12 +282,11 @@ img {
     height: 6em;
     margin-top: 1%;
     border-radius: 15px;
-    background-color: #222129;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    justify-content: space-evenly;
 }
 
 .future-rain-chance,
@@ -287,9 +296,10 @@ img {
     justify-content: center;
     align-items: center;
 
-    font-family: 'Nunito', sans-serif;
-    color: white;
+    font-family: 'Mulish', sans-serif;
+    color: var(--heading-text-color);
     font-size: 1.2em;
+    font-weight: 600;
     line-height: 1;
 }
 
@@ -302,17 +312,17 @@ img {
 
 .tomorrow-temp,
 .following-temp {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-size: 4em;
     line-height: 1.1;
-    color: #ecab83;
+    color: var(--secondary-text-color);
 }
 
 .tomorrow-max-low {
     display: flex;
     flex-direction: column;
 
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Mulish', sans-serif;
     color: grey;
     font-size: 1.7em;
     line-height: 1.3;
@@ -324,8 +334,8 @@ img {
 
 .astro span {
     width: 85%;
-    font-family: 'Nunito', sans-serif;
-    color: #ecab83a6;
+    font-family: 'Mulish', sans-serif;
+    color: var(--secondary-text-color);
     font-size: 2em;
     display: flex;
     flex-direction: row;
@@ -341,13 +351,14 @@ img {
 
 .weather-credits {
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: var(--heading-text-color);
     font-size: 1.5em;
     font-weight: 500;
+    line-height: 4;
 }
 
 .weather-credits a {
-    color: white;
+    color: red;
     text-underline-offset: 0.2em;
     font-style: italic;
 }
