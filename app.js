@@ -30,7 +30,7 @@ fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${currLocation
 
     document.querySelector('.city-name').innerHTML = (data.location.name);
 
-    if (document.querySelector('.city-name').innerHTML === 'Katerynoslav' || document.querySelector('.city-name').innerHTML === 'Iekaterinoslav') {
+    if (document.querySelector('.city-name').innerHTML === 'Katerynoslav' || document.querySelector('.city-name').innerHTML === 'Iekaterinoslav' || document.querySelector('.city-name').innerHTML === 'Dnipropetrovsk') {
       document.querySelector('.city-name').innerHTML = 'Dnipro'
     }
 
